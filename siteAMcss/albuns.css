@@ -1,0 +1,149 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+body {
+	background-color: darkgray;
+}
+
+.links {
+	text-align: right;
+	padding-top: 9px;
+}
+
+.links a {
+	color: #0437F2;
+	text-decoration: none;
+}
+
+.links a:hover{
+	color: #87CEEB;
+	text-decoration: underline;
+}
+
+.titulo {
+	color: #B0E0E6;
+	background-color: #00002F;
+	margin: 0 auto;
+}
+
+.tit {
+	text-align: center;
+	padding-top: 20px;
+	font-size: 30px;
+}
+
+.caixa {
+	background-color: #BED6D8;
+	margin: 0 auto;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 2%;
+	padding-left: 15px;
+	color: black;
+	font-size: 16px;
+
+	display: flex;           /* coloca imagem e músicas lado a lado */
+    align-items: flex-start;  /* alinha pelo topo */
+  	gap: 20px;
+}
+
+.infos {
+	position: relative;
+	text-align: center;
+}
+
+.capa {
+	height: 20em;
+	width: auto;
+	align-items: center;
+	margin: 10px;
+/*   display: block;*/
+	z-index: 2;
+	position: relative;
+}
+
+.vinil {
+	z-index: 1;
+	position: absolute;
+	top: 12px;
+	left: 50%;
+	animation: gira 4s linear infinite;
+	object-fit: cover;
+	width: 20em;
+  	height: 20em;
+   	aspect-ratio: 1 / 1;
+}
+
+@keyframes gira{
+	from{
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.nome{
+	color: black;
+	padding-left: 0;
+	font-family: "Russo One", sans-serif;
+	font-size: 16px;
+}
+
+.musicas {
+	margin: 0 auto;
+	display: inline-block;	
+  	flex: 1;
+  	height: 20em;
+  	padding-top: 1em;
+  	font-size: 20px;
+  	margin-left: 7em;
+}
+
+ @media (max-width: 768px) {
+	.caixa {
+		flex-direction: column;
+		align-items: center;
+		padding-left: 10px;
+}
+
+.vinil {
+	position: relative;
+	top: 0;
+	left: 0;
+	transform: none;
+	margin-top: -0.5em;
+}
+
+.capa,
+.vinil {
+	width: clamp(140px, 45vw, 300px); /* encolhem conforme a largura da tela-- para encolher proporcionalmente*/
+	max-width: 90%;
+	height: auto;
+}
+
+.musicas {
+	margin-left: 0;
+	padding-top: 12px;
+	text-align: center;
+	height: auto;
+	font-size: 18px;
+}
+
+.nome {
+	font-size: 18px;
+}
+
+@media (max-width: 480px) {
+.capa,
+.vinil {
+	width: clamp(120px, 60vw, 220px);
+}
+
+.musicas {
+	font-size: 16px;
+}
+
+.nome {
+	font-size: 16px;
+}

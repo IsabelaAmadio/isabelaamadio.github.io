@@ -1,0 +1,280 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+ <meta charset="utf-8"> 
+ <meta name="viewport" content="width=device-width, initial-scale=1"> 
+ <link rel="icon" href="favicon.ico">
+ <title>SUAS PREFERÊNCIAS</title> 
+ 
+    <style type="text/css"> 
+    a { 
+      color: black; 
+    } 
+
+    body { 
+        background: linear-gradient(to right, #B4B4B8, #464A48, #0D0C0C); 
+    } 
+
+    #titulo{
+        font-size: 1.5rem;
+        font-family: garamond;
+    }
+
+    summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        justify-content: center;
+        text-align: center;  
+        flex-wrap: wrap; 
+    }
+
+    summary::before {
+        content: "✭";  
+        display: inline-block;
+        transition: transform 0.3s;
+    }
+
+    .div {  
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); 
+        background-color:lightgray ; 
+        padding: 20px; 
+        width: 40%; 
+        border-radius: 10px; 
+        border: 2px solid black; 
+        margin: 0 auto; /* centraliza corretamente */
+        box-sizing: border-box; /* impede que padding aumente a largura */
+    }
+
+    input, select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    textarea{ 
+        width:100%; 
+        padding: 8px; 
+        margin-top: 5px; 
+        border: 1px solid #cccccc; 
+        border-radius: 4px; 
+        box-sizing: border-box; 
+        height: 100px; 
+        resize: vertical; 
+    } 
+      
+    input{ 
+        color: #C7C7C7; 
+    } 
+ 
+    input:hover{ 
+        color: gray; 
+    } 
+      
+    input:focus{ 
+        outline: none;/*p n aparecer a borda preta*/ 
+        border-color: black;
+        background-color: darkgray; 
+        color: white; 
+    }
+
+    button{ 
+        width: clamp(120px, 50%, 250px);; 
+        background-color: black; 
+        color: white; 
+        font-size: clamp(14px, 2vw, 18px); 
+        border: none;/*tirar a borda do botão*/ 
+        border-radius: 4px; 
+        padding: clamp(8px, 1.5vw, 12px) clamp(12px, 2vw, 18px); 
+        margin-top: 20px; 
+        cursor: pointer; 
+    } 
+
+    button:hover{ 
+        background-color: #4D4D4D; 
+    } 
+ 
+    select option:checked { 
+        background-color: gray; 
+        color: white; 
+    } 
+ 
+    input[type="radio"] { 
+        accent-color: gray;  
+    } 
+ 
+    textarea:focus { 
+        background-color: darkgray; 
+        color: white; 
+        border-color: black; 
+    } 
+ 
+  
+    button:active { 
+        transform: scale(1.05); 
+    } 
+
+    input::selection, 
+    textarea::selection, 
+    select::selection { 
+        background-color: black;   
+        color: white;               
+    } 
+
+    .principal {
+        font-size: 26px;
+        font-family: garamond;
+        background-color: lightgray;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    table{
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 200px;  
+        background-color: lightgray;            
+        font-family: Garamond, serif;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .tabela {
+        display: flex;          
+        justify-content: center;    
+        align-items: center;      
+        height: 100vh;   
+    }
+
+  </style>
+
+
+</head> 
+<body> 
+ 
+     <h4> 
+        <a href="AMcss.html"> HOME </a>| 
+        <a href="albuns.html"> ÁLBUNS |</a>
+        <a href="membros.html">MEMBROS DA BANDA</a>| 
+        <a href="">SUAS PREFERÊNCIAS</a>| 
+     </h4> 
+ 
+     <div class="principal">
+     <b>FALE SOBRE SUAS PREFERÊNCIAS DA BANDA:</b> 
+    </div>
+ 
+ 
+<center> 
+    <details> 
+  
+      <summary>      
+        <div id="titulo"> 
+        RESPONDA: 
+        </div>  
+      </summary> 
+ 
+       <div class="div"> 
+        <form> 
+          
+         <label for="famoso"> Qual o seu preferido? </label><br> 
+         <select name="famoso" id="famoso"> 
+          <option></option> 
+          <option>Alex Turner</option> 
+          <option>Nick O'Malley</option> 
+          <option>Jamie Cook</option> 
+          <option>Matthew Helders</option> 
+         </select>  
+             
+            <p> 
+            <label for="musica"> Qual sua música favorita? </label><br>   
+            <input type="text" id="musica" name="musica" size="40"> 
+            <p> 
+ 
+            <label for="album"> Qual o seu álbum favorito da banda?</label><br> 
+            <select name="album" id="album" size="5" multiple> 
+             <option>Whatever People Say I Am, That’s What I’m Not</option> 
+             <option>Favourite Worst Nightmare</option> 
+             <option>Humbug</option> 
+             <option>Suck It and See</option> 
+             <option>AM</option> 
+             <option>Tranquility Base Hotel & Casino</option> 
+             <option>The Car</option> 
+            </select><br> 
+            <small>ctrl+click para<br>múltipla seleção</small>  
+ 
+            <p></p> 
+ 
+            <label for="nota"> Nota para a banda:</label><br> 
+            <input type="number" name="nota" id="nota" min="0" max="10" placeholder="0-10"> 
+ 
+            <p></p> 
+ 
+            <label for="data"> Quando você começou a ouvir a banda?</label><br> 
+            <select id="inicio" name="inicio"> 
+             <option></option> 
+                <option value="menos1">Menos de 1 ano</option> 
+                <option value="1a3">1 a 3 anos</option> 
+                <option value="3a5">3 a 5 anos</option> 
+                <option value="mais5">Mais de 5 anos</option> 
+            </select> 
+ 
+            <p></p> 
+ 
+            <label for="show"> Você já foi a um show da banda?</label><br> 
+            <input type="radio" name="show" id="showSim" value="sim">Sim 
+            <input type="radio" name="show" id="showNao" value="não">Não 
+            <p></p> 
+ 
+            <label for="comentario"> Se sim, deixe sua experiência: </label><br> 
+            <textarea id="comentario" name="comentario" rows="5" cols="50"></textarea> 
+            <p></p> 
+                    
+                   <button>ENVIAR</button> 
+        </form> 
+    </div> 
+    </details> 
+     
+     
+    <details> 
+        <summary> 
+           <div id="titulo">
+            QUER RECEBER NOVIDADES POR E-MAIL?
+            </div> 
+        </summary> 
+       <div class="div"> 
+        <p></p> 
+        <form>
+
+        <label for="nome">Seu nome:</label><br> 
+         <input type="text" name="nome" id="nome" size="50" required minlength="3" maxlength="30" spellcheck="true" placeholder="Digite seu nome completo:"><br> 
+ 
+        <label for="email">Seu email:</label><br> 
+        <input type="email" name="email" id="email" size="40" min="15" max="200" placeholder="Digite seu email"> 
+        <p></p> 
+ 
+                <button>ENVIAR</button> 
+        </form> 
+      </div>   
+   </details> 
+</center> 
+
+
+<div class="tabela">
+    <table>
+        <tr>
+            <th colspan="2">SITE FEITO POR</th>
+        </tr>
+        <tr>
+            <td>Isabela Amadio Zambuzi</td>
+            <td>Ariely Dias</td>
+        </tr>
+    </table>
+</div>
+ 
+</body> 
+</html>
